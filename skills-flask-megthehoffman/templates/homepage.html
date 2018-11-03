@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <div id="homepage">
+    <h1 class="heading">Ubermelon's Most Loved Melons</h1>
+    <form action="/get-name" required>
+        Hi! What's your name?
+        <input type="text" name="person_name"><br><br>
+        <p id="submit"><input type="submit" value="Click me! Click me!"></p>
+    </form>
+    <div id="home_image">
+    <img src='//media.self.com/photos/5b10229e443bb72bf9fe0750/4:3/w_728,c_limit/pick-a-perfect-mellon.jpg'>
+    </div>
+    </div>
+{% endblock %}

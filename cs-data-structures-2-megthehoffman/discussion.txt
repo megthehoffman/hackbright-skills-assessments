@@ -1,0 +1,90 @@
+Discussion
+----------
+
+1. Which would be the most efficient data structure for a data set with the
+   following requirements:
+
+  - frequently removing and adding items to the beginning of the data structure
+
+  - frequently removing and adding items to the end of the data structure
+
+  - rarely indexing and searching
+
+  A. A Python list B. Singly linked list C. Doubly linked list
+
+  Explain your answer.
+
+The most efficient data structure to meet the above requirements would be C, a doubly linked list. Doubly linked lists have both a head and a tail, which means that both can be used as pointer to the beginning or end (respectively) of a list easily. This is possible because doubly linked lists have the ability to determine the previous node and the next node. Instead of traversing the whole list for the last linked item, you can immediately point to the tail and move the pointer to the item before the tail. Similarly, you can point to the head and then move its pointer to the item that follows the head. Removing and adding from both the beginning and the end are all O(1) operations. Although indexing and searching are O(n) operations, these will only occur rarely in the data set described above. 
+
+
+2. Which would be the most efficient data structure for a data set with the
+   following requirements:
+
+  - order is unimportant
+
+  -frequently adding and removing items
+
+  - frequently looking up items
+
+  A. A Python list  B. A Dictionary  C. Deque  D. Binary Search Tree
+
+  Explain your answer.
+
+The most efficient data structure to meet the above requirements would be B, a dictionary. Adding and removing items to a dictionary has a runtime of O(1). In both cases, assuming you know the key of the dictionary you'd like to add or remove, it is easy to find the index that matches the hash of that key and update or remove the key/value from the entries table (this is possible because of the general hashmap structure of dictionaries). Although ordering the keys in a dictionary has a runtime of O(n log n), order is unimportant for the data set described above, so it is not relevant that other data structures have a better runtime for ordering operations.
+
+
+3. Explain why looking up, adding elements, and removing elements from a 
+   dictionary or hash map are all O(1) operations.
+
+Hashmaps are a kind of structure that utilizes hashing and arrays to store information in such a way that it can be retrieved or changed later. Python expounds on this hashmap structure to construct dictionaries. Given a dictionary, Python hashes each key and thus assigns a stable number to each key. It then builds an array (chooses a chunk of available memory space) that is longer than the number of items that need to be stored. This is inefficient in terms of space, but works well, as the array can grow when more space is needed (around 66% capacity). Then, hashmap algorithms select part of the previously created hashes to use as an index of each item. These indices are stored in what is referred to as an "indices array." The entries (key/value pairs) of the dictionary are then stored in a separate "entries array." This entries array starts out empty and then is filled with the entries based on the hash/index location in the indices array. So, to add an item to a dictionary, Python hashes the key, assigns an appropriate index based on how many other entries have been previously added, and then places that index in the indices array at a location determined by the hash algorithm (hashmaps have the ability to avoid "collisions" of indices). Then, the key/value pair, or entry, is added to the entries table, and is the entry to which the index in the indices table points. Because of this hashmap structure, adding and removing elements from a dictionary only involves finding the index that matches the hash of a particular key and either updating or removing the corresponding space in the entries array. Assuming you know the key of the value you'd like to add or remove, these are O(1) operations.
+
+
+4. Explain why removing elements from or adding elements to an arbitrary
+   location in a Python list are O(n) operations.
+
+Python lists are stored in structures referred to as arrays, which is allocated contiguous space that can expand into pre-allocated extra space if the list that needs to be stored becomes longer. Because this space is contiguous and each pointer (index) in the array is assigned to a value in the list, removing or adding elements from anywhere except the end of the list (which is an O(1) operation) requires moving the pointers for every value after that as well (an O(n) operation). 
+
+
+5. What is the correct runtime for:
+
+  - Bubble Sort? O(n^2)
+
+  - Quicksort? O(n^2) -- best case scenario is O(n log n), worst case scenario is O(n^2), per the Big O Cheat Sheet (http://bigocheatsheet.com), but not per lecture notes?
+
+  - Merge Sort? O(n log n)
+
+  - Insertion Sort? O (n^2)
+
+
+6. What is the difference between a tree and a graph?
+
+All trees are graphs, but not all graphs are trees. Trees are more specialized forms of graphs. The differences between a tree and a graph is that graphs are cyclical (trees are acyclic), and trees have hierarchy (graphs do not). This means that trees do not loop back on themselves (graphs can), and they have one specified root node from which all other nodes descend from (graphs do not).
+
+
+7. Using the Python implementation of Quicksort from the instructions:
+
+  Given the list [8, 4, 1, 6, 5, 2, 7, 3]:
+  When this function is initially called, what are the values of:
+
+  I took this to mean the values of these items after the completion of the first time the function is called, and before the function is called again on the last line.
+
+    - lst - [8, 4, 1, 6, 5, 2, 7, 3]
+
+    - pivot - 5
+
+    - lo - [4, 1, 2, 3]
+
+    - hi - [8, 6, 7]
+
+
+
+  When the quicksort is first called recursively on the `lo` list, what are the
+  values of:
+
+  - lst - [ 4, 1, 2, 3]
+
+  - pivot - 2
+
+  - lo - [1]
+
+  - hi - [4, 3]

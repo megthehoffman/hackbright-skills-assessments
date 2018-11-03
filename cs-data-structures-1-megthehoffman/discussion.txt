@@ -1,0 +1,92 @@
+Runtime
+-------
+
+1. Runtime for does_string_contain_letter: O(n)
+
+
+
+2. Runtime for duplicate_letters: O(n^2)
+
+
+
+3. Runtime for duplicate_letters2: O(n)
+
+
+
+Stacks and Queues
+-----------------
+
+
+1. Which would be a better data structure for creating a Stack: a Linked List or 
+   a built-in Python list? Explain why, referencing the runtime requirements for
+   Stack operations (push, pop, etc).
+
+On a single-linked list, searching for a node is an 0(n) operation, and appending to the end of a linked list is an O(1) operation (assuming we use a tail). Removing a node in a linked list is an O(n) operation, because the links only go one way, and we have to traverse the list to change the pointer of the last node to the second to last node (there is no "go to previous" ability). On a built-in Python list, indexing, adding items to the end, and removing items from the end are O(1) operations. Slower operations are searching, adding items NOT to the end, and removing items NOT from the end (these are O(n) operations).  
+
+For a stack, the methods used are push(item), pop(), peek(), and is_empty(), following a last-in, first-out (LIFO) system. Push adds an item to the top of a stack, pop removes an item from the top of a stack, peek returns the value of the item on top without removing it, and is_empty checks to see if the stack contains any items. 
+
+Because push and pop both work by adding and removing items from the top of a stack, this means that newer items are near the top. Although the top of a stack is equivalent to the end of a list, we get to choose which end of the list we would like to be the beginning. If we have linked list with a tail and push items at the head, then push, peek, and is_empty are O(1), because we can go directly to the tail, and add or look at items there. But, pop is an O(n) operation because we have to traverse the list to get to the end to change the pointer. If we have a tail and push items at the tail, then push, peek, and is_empty are still O(1) operations, but now pop is also a O(1) operation, because we can get the second to last item directly from the tail. 
+
+Using a linked list in this fashion means that either a built-in Python list or linked list would be suitable and equally as efficient.
+
+
+
+2. Which would be a better data structure for creating a Queue: a Linked List or
+   a built-in Python list? Explain why, referencing the runtime requirements for
+   Queue methods (enqueue, dequeue, etc).
+
+(See above for my explanation of the runtime variations between linked lists versus built-in Python lists.)
+
+The most common methods for queues are enqueue(item), dequeue(), peek(), and is_empty. Peek and is_empty serve similar roles as they do in stacks. Items are enqueued (added) at the back of a queue, and dequeued (removed) from the from of a queue. This means that newer items are at the back of a queue, and older items are near the front (first-in, first-out or last-in, last-out).
+
+To create a queue, it would be more runtime efficient to use a a linked list, as it is an O(n) operation to remove an item from the beginning of a built-in Python list, but a linked list can be constructed in such a way that the operations of a queue would have a runtime of O(1).
+
+
+
+Trees
+-----
+
+1. Using the diagram in the instructions, in what order would a Breadth First
+   Search (BFS) algorithm visit each node until finding burritos (starting at
+   food)?
+
+BFS uses pop(0) to pop the first item in a list, and so is a queue, rather than a stack (FIFO/LILO, like the Hackbright Help Queue).
+
+1. food
+2. Italian
+3. Indian
+4. Mexican
+5. lasagna
+6. pizza
+7. tikka masala
+8. saag
+9. burritos
+
+
+2. Using the diagram in the instructions, In what order would a Depth First 
+   Search (DFS) algorithm visit each node until finding Chicago-style (starting
+   at food)? 
+
+DFS uses pop() to pop the last item in a list, and so is a stack, rather than a queue (LIFO/FILO, like pancakes).
+
+1. food
+2. Mexican
+3. enchiladas
+4. tacos
+5. burritos
+6. Indian
+7. saag
+8. tikka masala
+9. Italian
+10. pizza
+11. Sicilian
+12. New York-style
+13. Chicago-style
+
+
+3. How is a binary search tree different from other trees?
+
+A binary search tree is still a tree in that it is comprised of nodes, but instead of being unbalanced and each node having various numbers of children, binary search trees are balanced and each node has two children (the left node is a value that comes before the parent node, and the right value is a value that comes after the parent node, but before the next parent node). Binary search trees have specific rules for their arrangement. 
+
+
+

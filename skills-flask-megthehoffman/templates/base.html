@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+        <link rel="stylesheet" type="text/css" href="/static/styles.css" >
+        <title>{% block title %}{% endblock %} - Ubermelon</title>
+        {% endblock %}
+    </head>
+    <body style="background-color: #FEAA19">
+        {% block content %}{% endblock %}
+    </body>
+</html>
+
+<!-- Block tags identify areas that the child template can fill in -->

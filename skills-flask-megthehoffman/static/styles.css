@@ -1,0 +1,53 @@
+#top_melons {
+    height: 200px;
+    width: 200px;
+    background-color: #FEAA19;
+
+}
+
+.melon-div {
+    display: inline-block;
+    padding: 10px;
+    width: 205px;
+    margin: 5px;
+    border: 10px solid #32CD32;
+}
+
+.heading {
+    font-family: Impact, Charcoal, sans-serif;
+    color: red;
+}
+
+#home_image {
+    text-align: center;
+}
+
+/* Was trying to play around with dynamically stretching one image to the background without tiling
+Deleted corresponding code in .html
+Also playing with different style options
+
+#homepage {
+    background-image: url('//media.self.com/photos/5b10229e443bb72bf9fe0750/4:3/w_728,c_limit/pick-a-perfect-mellon.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+}
+
+#background {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+#submit {
+    text-align: center;
+}
+
+#homepage {
+    /*Was playing around with some style options*/
+
+    /*color: DeepPink;*/
+    /*background-image: url('//media.self.com/photos/5b10229e443bb72bf9fe0750/4:3/w_728,c_limit/pick-a-perfect-mellon.jpg');*/
+    /*background-size: cover;*/
+}/*

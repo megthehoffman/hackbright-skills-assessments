@@ -1,0 +1,16 @@
+Put your answers to the knowledge quiz here.
+
+1) B 
+2) B 
+3) D 
+4) B 
+5) B 
+6) A
+7) C (D seems like it could be true also?)
+8) B
+
+9) Referential integrity is the concept pertaining to databases that ensures data is consistent among all related tables. That is, the data related to primary keys and foreign keys must be consistent. For example, consider a table of employees that has an employee_id column that is a primary key, and another column that has a building_id. Consider also a table of dept_info that has a column for building_num as a foreign key, related to the column in the employees table. The building_num column provides a link between these two related tables that cannot be broken for referential integrity to be maintained. That is, a department (row) in the dept_info table cannot make reference to a building_num (column) in that row that is not a building_id ever referenced in the employees table. Essentially, referential integrity ensures that if there were a literal arrow pointing from a foriegn key in one table, it would always point to an existing location in the table to which it is referencing or connected to (i.e., it will never point to data that is non-existent). The foriegn key could also be null, or reference to multiple rows of the parent table, and referential integrity would still hold. In SQL, referential integrity is supported by declarative referential integrity--in other words, we declare the PRIMARY KEY and FOREIGN KEY as part of the setup of a table. 
+
+10) Data normalization is the process of reducing data redundancy amongst or excessive columns within tables. Setting up data models and identifying relationships prior to creating a database helps to maintain normalization.
+
+11) To model the relationships described for the restaurant, I would use three separate tables. The first table would be for the three types of menus (menus). The menus table would hold three columns: meal_id (type Integer: 1, 2, 3), meal_type (type String: breakfast, lunch, dinner) and meal_time (type String, probably: 8:00-11:30, 11:30-16:30, 16:30-22:00). A dishes table would have three columns: dish_id (type Integer: 1, 2, 3), name (type String), description (type String). Each type of dish would appear once. The two tables would be related through a middle table (can't recall the difference between middle and association tables?), menusDishes. This table would provide the ability to associate dishes with any number of menus that they are on, and store the price for the dish on its respective menus. The columns would include: meal_id, dish_id, and price (type Float). This table would be related to each of the other tables. 

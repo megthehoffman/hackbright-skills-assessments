@@ -1,0 +1,15 @@
+Include your answers to the knowledge quiz here.
+
+1) C
+2) A
+3) C
+4) A
+5) C
+6) B
+7) B
+8) B
+9) B
+10) B
+11) D
+
+(Side note: questions 1 and 2 say "evalutation" instead of "evaluation.")

@@ -1,0 +1,17 @@
+Please fill in your answers to the knowledge quiz below.
+
+1) C
+2) D
+3) A
+4) A
+5) B
+6) B
+7) D
+8) A
+9) C
+10) B
+11) C
+12) D
+13) signature
+14) program, company
+15) C is where variables as we know them were first introduced, initially established as a means of helping with memory management. In C, variables are fixed memory locations that never move. In Python, variables actually aren't variables--they are "identifiers" (or pointers) that point to a mutable memory location. 
